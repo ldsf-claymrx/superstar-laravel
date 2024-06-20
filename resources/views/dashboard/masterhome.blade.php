@@ -47,18 +47,13 @@
 							<!-- menu start -->
 							<nav class="main-menu">
 								<ul>
-									<li><a href="{{ url('/') }}">Inicio</a></li>
-									<li><a href="">Productos</a></li>
-									<li><a href="">Noticias</a></li>
-									<li><a href="">Ingresar</a>
-										<ul class="sub-menu">
-											<li><a href="">Iniciar Sesión</a></li>
-											<li><a href="">Registrarte</a></li>
-										</ul>
-									</li>
+									<li><a href="{{ url('/') }}"><i class="fas fa-home"></i> Inicio</a></li>
+									<li><a href=""><i class="fas fa-boxes"></i> Productos</a></li>
+									<li><a href=""><i class="fas fa-newspaper"></i> Noticias</a></li>
+									<li><a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
 									<li>
 										<div class="header-icons">
-											
+											<a class="shopping-cart" href="{{ url('/logout') }}"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
 										</div>
 									</li>
 								</ul>

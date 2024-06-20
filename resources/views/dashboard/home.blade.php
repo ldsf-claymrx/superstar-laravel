@@ -1,4 +1,4 @@
-@extends('masterhome')
+@extends('dashboard.masterhome')
 
 @section('title')
     <!-- title -->
@@ -13,8 +13,8 @@
 					<div class="col-lg-9 offset-lg-2 text-center">
 						<div class="hero-text">
 							<div class="hero-text-tablecell">
-								<p class="subtitle">Restaurante</p>
-								<h1>Super Star</h1>
+								<p class="subtitle">Bienvenido(a)</p>
+								<h1>{{ Auth::user()->name." ".Auth::user()->lastname}}</h1>
 								<div class="hero-btns">
 									<a href="" class="boxed-btn">Productos</a>
 									<a href="" class="bordered-btn">Conoce mas información</a>
@@ -31,7 +31,6 @@
         <!-- features list section -->
 		<div class="list-section pt-80 pb-80">
 			<div class="container">
-
 				<div class="row">
 					<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
 						<div class="list-box d-flex align-items-center">
