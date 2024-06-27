@@ -80,7 +80,7 @@
                                 </form>
                                 <div class="text-center pt-4">
                                     <hr>
-                                    <a href="{{ url('/') }}">¡Ya tienes cuenta!, Inicia Sesión</a>
+                                    <a href="{{ url('/login') }}">¡Ya tienes cuenta!, Inicia Sesión</a>
                                     <footer class="sticky-footer bg-white">
                                         <div class="container my-auto">
                                             <div class="copyright text-center my-auto">

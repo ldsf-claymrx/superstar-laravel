@@ -50,10 +50,18 @@
 									<li><a href="{{ url('/') }}"><i class="fas fa-home"></i> Inicio</a></li>
 									<li><a href=""><i class="fas fa-boxes"></i> Productos</a></li>
 									<li><a href=""><i class="fas fa-newspaper"></i> Noticias</a></li>
-									<li><a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+									@auth
+										<li><a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+									@endauth
 									<li>
 										<div class="header-icons">
-											<a class="shopping-cart" href="{{ url('/logout') }}"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+											@auth
+												<a class="shopping-cart" href="{{ url('/logout') }}"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+											@endauth
+
+											@guest
+												<a class="shopping-cart" href="{{ url('/login') }}"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+											@endguest
 										</div>
 									</li>
 								</ul>

@@ -13,8 +13,14 @@
 					<div class="col-lg-9 offset-lg-2 text-center">
 						<div class="hero-text">
 							<div class="hero-text-tablecell">
-								<p class="subtitle">Bienvenido(a)</p>
-								<h1>{{ Auth::user()->name." ".Auth::user()->lastname}}</h1>
+								@auth
+									<p class="subtitle">Bienvenido(a)</p>
+									<h1>{{ Auth::user()->name." ".Auth::user()->lastname}}</h1>
+								@endauth
+								@guest
+									<p class="subtitle">Restaurante</p>
+									<h1>Super Star</h1>
+								@endguest
 								<div class="hero-btns">
 									<a href="" class="boxed-btn">Productos</a>
 									<a href="" class="bordered-btn">Conoce mas información</a>
@@ -92,7 +98,7 @@
 							</div>
 							<h3>DOBLE</h3>
 							<p class="product-price"><span>HAMBURGUESA</span> $70 </p>
-							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i>Agregar al carrito</a>
+							<a href="cart.html" class="cart-btn"><i class="fas fa-box"></i> Ver producto</a>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 text-center">
@@ -102,17 +108,17 @@
 							</div>
 							<h3>SUIZA</h3>
 							<p class="product-price"><span>HAMBURGUESA</span> $55 </p>
-							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i>Agregar al carrito</a>
+							<a href="cart.html" class="cart-btn"><i class="fas fa-box"></i> Ver producto</a>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
+					<div class="col-lg-4 col-md-6 text-center">
 						<div class="single-product-item">
 							<div class="product-image">
 								<a href="single-product.html"><img src="{{ asset('img/products/product-img-3.jpg') }}" alt=""></a>
 							</div>
 							<h3>ESPECIAL</h3>
 							<p class="product-price"><span>HOT-DOG</span> $35 </p>
-							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i>Agregar al carrito</a>
+							<a href="cart.html" class="cart-btn"><i class="fas fa-box"></i> Ver producto</a>
 						</div>
 					</div>
 				</div>
@@ -130,10 +136,10 @@
 					</div>
 					<div class="col-lg-6 col-md-12">
 						<div class="abt-text">
-							<p class="top-sub">Desde el año 2008</p>
+							<p class="top-sub">Desde el año 2006</p>
 							<h2>Somos <span class="orange-text">Super Star</span></h2>
 							<p style="text-align: justify">
-								Desde el año 2008 que estamos ofreciendo nuestros servicios de hamburguesas y hot dogs a todos nuestro clientes,
+								Desde el año 2006 que estamos ofreciendo nuestros servicios de hamburguesas y hot dogs a todos nuestro clientes,
 								ofreciendo productos de calidad y con la higiene que se corresponde.
 
 							</p>
@@ -142,7 +148,12 @@
 								hasta Orden de Flautas; sin embargo por motivos de espacio, ya no pudimos seguirle ofreciendo estos productos.
 								De ante mano queremos agradecerles a todos nuestros clientes su apoyo y su preferencia.
 							</p>
-							<a href="" class="boxed-btn mt-4">Iniciar Sesion</a>
+							@auth
+								<a href="" class="boxed-btn mt-4">Vamos a comprar</a>
+							@endauth
+							@guest
+								<a href="{{ url('/login') }}" class="boxed-btn mt-4">Iniciemos Sesion</a>
+							@endguest
 						</div>
 					</div>
 				</div>

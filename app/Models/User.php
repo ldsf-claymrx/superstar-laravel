@@ -49,4 +49,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function registeredProducts()
+    {
+        return $this->hasMany(Products::class, 'who_registered');
+    }
 }
