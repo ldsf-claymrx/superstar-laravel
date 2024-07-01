@@ -15,13 +15,9 @@ class Categories extends Model
 
     protected $fillable = [
         'name',
+        'who_registered'
     ];
 
     protected $guarded = [];
     public $timestamps = false;
-
-    public function products()
-    {
-        return $this->hasMany(Products::class, 'id_category');
-    }
 }

@@ -22,7 +22,6 @@ class User extends Authenticatable
         'phone_number',
         'active',
         'authorization_level',
-        'address',
         'email',
         'password',
     ];
@@ -48,10 +47,5 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    public function registeredProducts()
-    {
-        return $this->hasMany(Products::class, 'who_registered');
     }
 }

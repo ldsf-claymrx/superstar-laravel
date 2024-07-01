@@ -86,23 +86,25 @@
                         <tbody>
                             @foreach ($products as $product)
                             <tr>
-                                <td>{{ $product['category_name'] }}</td>
-                                <td>{{ $product['name'] }}</td>
-                                <td>{{ $product['description'] }}</td>
-                                <td>{{ $product['price'] }}</td>
-                                <td style="text-align: center"><img src="{{ asset('img/products/'.$product['name_img']) }}" style="width: 40px" alt="{{ $product['name_img'] }}"></td>
-                                <td>{{ $product['registered_by'] }}</td>
+                                <td>{{ $product->category_name }}</td>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->description }}</td>
+                                <td>{{ $product->price }}</td>
+                                <td style="text-align: center">
+                                    <img src="{{ asset('img/products/'.$product->name_img) }}" style="width: 40px">
+                                </td>
+                                <td>{{ $product->who_registered }}</td>
                                 <td style="text-align: center">
                                     <div class="btn-group" role="group">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit{{$product['id']}}"><i class="fas fa-fw fa-pen"></i></button>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delete{{$product['id']}}"><i class="fas fa-fw fa-trash"></i></button>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit{{$product->id}}"><i class="fas fa-fw fa-pen"></i></button>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delete{{$product->id}}"><i class="fas fa-fw fa-trash"></i></button>
                                     </div>
                                 </td>
 
-                                <div class="modal fade" id="edit{{$product['id']}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="edit{{ $product->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
-                                            <form action="{{ route('product.update', $product['id']) }}" method="POST" enctype="multipart/form-data">
+                                            <form action="{{ route('product.update', $product->id) }}" method="POST" enctype="multipart/form-data">
                                                 <div class="card shadow mb-4">
                                                     <!-- Card Header - Dropdown -->
                                                     <div class="card-header py-3">
@@ -117,14 +119,14 @@
                                                                 <div class="col-xl-6">
                                                                     <div class="form-group">
                                                                         <label for="name">Nombre del producto:</label>
-                                                                        <input type="text" class="form-control form-control-user" id="name" name="name" value="{{ $product['name'] }}">
+                                                                        <input type="text" class="form-control form-control-user" id="name" name="name" value="{{ $product->name }}">
                                                                     </div>
                                                                 </div>
                                                                 
                                                                 <div class="col-xl-6">
                                                                     <div class="form-group">
                                                                         <label for="">Precio:</label>
-                                                                        <input type="number" class="form-control form-control-user" id="price" name="price" step=".01" value="{{ $product['price'] }}">
+                                                                        <input type="number" class="form-control form-control-user" id="price" name="price" step=".01" value="{{ $product->price }}">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -133,7 +135,7 @@
                                                         <div class="form-group">
                                                             <div class="row">
                                                                 <div class="col-xl-2">
-                                                                    <img src="{{ asset('img/products/'.$product['name_img']) }}" width="50px">
+                                                                    <img src="{{ asset('img/products/'.$product->name_img) }}" width="50px">
                                                                 </div>
                                                                 <div class="col-xl-10">
                                                                     <div class="custom-file">
@@ -149,14 +151,14 @@
                                                             <select name="id_category" id="id_category" class="form-control form-control-user">
                                                                 <option value="" selected disabled>--Seleccione la categoria--</option>
                                                                 @foreach ($categories as $category)
-                                                                    <option value="{{ $category->id }}" {{ ($product['id_category']->id == $category->id  ? 'selected' : '') }}>{{ $category->name}}</option>
+                                                                    <option value="{{ $category->id }}" {{ ($product->id_category == $category->id  ? 'selected' : '') }}>{{ $category->name}}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>
             
                                                         <div class="form-group">
                                                             <label for="description">Descripción</label>
-                                                            <textarea class="form-control" name="description" id="description" rows="3">{{ $product['description'] }}</textarea>
+                                                            <textarea class="form-control" name="description" id="description" rows="3">{{ $product->description }}</textarea>
                                                         </div>
                                                         
                                                     </div>
@@ -170,10 +172,10 @@
                                     </div>
                                 </div>
 
-                                <div class="modal fade" id="delete{{$product['id']}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="delete{{ $product->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
-                                            <form action="{{ route('product.delete', $product['id']) }}" method="POST" enctype="multipart/form-data">
+                                            <form action="{{ route('product.delete', $product->id) }}" method="POST" enctype="multipart/form-data">
                                                 <div class="card shadow mb-4">
                                                     <!-- Card Header - Dropdown -->
                                                     <div class="card-header py-3">
@@ -183,7 +185,7 @@
                                                     <div class="card-body">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <label for="">¿Estás seguro de eliminar <b>{{ $product['name'] }}</b> de tu lista de productos?</label>
+                                                        <label for="">¿Estás seguro de eliminar <b>{{ $product->name }}</b> de tu lista de productos?</label>
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">

@@ -22,8 +22,8 @@
 									<h1>Super Star</h1>
 								@endguest
 								<div class="hero-btns">
-									<a href="" class="boxed-btn">Productos</a>
-									<a href="" class="bordered-btn">Conoce mas información</a>
+									<a href="" class="boxed-btn">Nuestros productos</a>
+									<a href="" class="bordered-btn">Más información</a>
 								</div>
 							</div>
 						</div>
@@ -45,7 +45,7 @@
 							</div>
 							<div class="content">
 								<h3>Compra en linea</h3>
-								<p>Ahorrate las filas y el viaje</p>
+								<p>Ahorrate las filas.</p>
 							</div>
 						</div>
 					</div>
@@ -66,8 +66,8 @@
 								<i class="fas fa-shipping-fast"></i>
 							</div>
 							<div class="content">
-								<h3>¡Recibelo en tu casa!</h3>
-								<p>Conoce los precios y las zonas de entrega <a href="">aquí</a></p>
+								<h3>¡Proximamente a Domicilio!</h3>
+								<p>Por este medio daremos a conocer este servicio.</p>
 							</div>
 						</div>
 					</div>
@@ -85,23 +85,26 @@
 					<div class="col-lg-8 offset-lg-2 text-center">
 						<div class="section-title">	
 							<h3><span class="orange-text">Nuestros</span> Productos</h3>
-							<p>Contamos con diferentes variedades de hamburguesas y hot-dogs, aqui te mostraremos los mas vendidos</p>
+							<p>
+								Contamos con diferentes variedades de hamburguesas y hot-dogs, 
+								aquí te mostramos algunos de ellos.
+							</p>
 						</div>
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="col-lg-4 col-md-6 text-center">
+					<div class="col-lg-3 col-md-6 text-center">
 						<div class="single-product-item">
 							<div class="product-image">
-								<a href="single-product.html"><img src="{{ asset('img/products/product-img-1.jpg') }}" alt=""></a>
+								<img src="{{ asset('img/products/1719794059.jpg') }}" alt="">
 							</div>
-							<h3>DOBLE</h3>
+							<h3>NOMBRE</h3>
 							<p class="product-price"><span>HAMBURGUESA</span> $70 </p>
 							<a href="cart.html" class="cart-btn"><i class="fas fa-box"></i> Ver producto</a>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 text-center">
+					<div class="col-lg-3 col-md-6 text-center">
 						<div class="single-product-item">
 							<div class="product-image">
 								<a href="single-product.html"><img src="{{ asset('img/products/product-img-2.jpg') }}" alt=""></a>
@@ -111,7 +114,17 @@
 							<a href="cart.html" class="cart-btn"><i class="fas fa-box"></i> Ver producto</a>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 text-center">
+					<div class="col-lg-3 col-md-6 text-center">
+						<div class="single-product-item">
+							<div class="product-image">
+								<a href="single-product.html"><img src="{{ asset('img/products/product-img-3.jpg') }}" alt=""></a>
+							</div>
+							<h3>Sencillo</h3>
+							<p class="product-price"><span>HOT-DOG</span> $35 </p>
+							<a href="cart.html" class="cart-btn"><i class="fas fa-box"></i> Ver producto</a>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 text-center">
 						<div class="single-product-item">
 							<div class="product-image">
 								<a href="single-product.html"><img src="{{ asset('img/products/product-img-3.jpg') }}" alt=""></a>

@@ -55,8 +55,8 @@
             <!-- Nav Item -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/dashboard/admin') }}">
-                    <i class="fas fa-fw fa-chart-line"></i>
-                    <span>Estadisticas</span>
+                    <i class="fas fa-fw fa-store"></i>
+                    <span>Negocio</span>
                 </a>
             </li>
 
@@ -81,15 +81,15 @@
 
             <!-- Nav Item -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="">
-                    <i class="fas fa-fw fa-store"></i>
-                    <span>Negocio</span>
+                <a class="nav-link collapsed" href="{{ url('/dashboard/admin') }}">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>Estadisticas</span>
                 </a>
             </li>
 
             <!-- Nav Item -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ url('dashboard/admin/categorias')}}">
                     <i class="fas fa-fw fa-list"></i>
                     <span>Categorias</span>
                 </a>

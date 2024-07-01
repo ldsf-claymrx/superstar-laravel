@@ -24,14 +24,4 @@ class Products extends Model
 
     protected $guarded = [];
     public $timestamps = false;
-
-    public function category()
-    {
-        return $this->belongsTo(Categories::class, 'id_category');
-    }
-
-    public function registeredBy()
-    {
-        return $this->belongsTo(User::class, 'who_registered');
-    }
 }

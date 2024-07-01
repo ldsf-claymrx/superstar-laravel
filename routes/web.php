@@ -29,8 +29,16 @@ Route::middleware('auth')->group(function() {
 
 
     Route::get('/dashboard/admin', [AdminController::class, 'getViewDashboard']);
+
+
     Route::get('/dashboard/admin/productos', [AdminController::class, 'getProducts']);
     Route::post('/dashboard/admin/productos', [AdminController::class, 'createProduct']);
     Route::put('/dashboard/admin/productos/{id}', [AdminController::class, 'updateProduct'])->name('product.update');
     Route::delete('/dashboard/admin/productos/{id}', [AdminController::class, 'deleteProduct'])->name('product.delete');
+
+    Route::get('/dashboard/admin/categorias', [AdminController::class, 'getCategories']);
+    Route::post('/dashboard/admin/categorias', [AdminController::class, 'createCategory']);
+    Route::put('/dashboard/admin/categorias/{id}', [AdminController::class, 'updateCategory'])->name('category.update');
+    Route::delete('/dashboard/admin/categorias/{id}', [AdminController::class, 'deleteCategory'])->name('category.delete');
+
 });

@@ -31,11 +31,10 @@ class UsersController extends Controller
         $User->name = ucwords(strtolower($request->input('name')));
         $User->lastname = ucwords(strtolower($request->input('lastname')));
         $User->phone_number = $request->input('phone_number');
-        $User->address = $request->input('address');
         $User->email = $request->input('email');
         $User->password = Hash::make($request->input('password'));
         $User->save();
 
-        return redirect('/')->with('success', '¡Registro exitoso! Ahora inicia sesión');
+        return redirect('/login')->with('success', '¡Registro exitoso! Ahora inicia sesión');
     }
 }

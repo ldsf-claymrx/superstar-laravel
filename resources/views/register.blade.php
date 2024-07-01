@@ -68,10 +68,6 @@
                                         <input type="password" class="form-control" name="password" id="password" placeholder="--Ingrese la contraseña--" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="address">Dirección:</label>
-                                        <input type="text" class="form-control form-control-user" id="address" name="address" placeholder="--Domicilio(opcional)--" autocomplete="on">
-                                    </div>
-                                    <div class="form-group">
                                         <label for="phone_number">Telefono:</label>
                                         <input type="number" class="form-control form-control-user" id="phone_number" name="phone_number" placeholder="--Numero telefonico--" autocomplete="on">
                                     </div>
