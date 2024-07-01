@@ -67,6 +67,7 @@
                                 <th>Nombre(s)</th>
                                 <th>Descripción</th>
                                 <th>Precio</th>
+                                <th>Imagen</th>
                                 <th>Registrado Por:</th>
                                 <th>Acciones</th>
                             </tr>
@@ -77,6 +78,7 @@
                                 <th>Nombre(s)</th>
                                 <th>Descripción</th>
                                 <th>Precio</th>
+                                <th>Imagen</th>
                                 <th>Registrado Por:</th>
                                 <th>Acciones</th>
                             </tr>
@@ -88,6 +90,7 @@
                                 <td>{{ $product['name'] }}</td>
                                 <td>{{ $product['description'] }}</td>
                                 <td>{{ $product['price'] }}</td>
+                                <td style="text-align: center"><img src="{{ asset('img/products/'.$product['name_img']) }}" style="width: 40px" alt="{{ $product['name_img'] }}"></td>
                                 <td>{{ $product['registered_by'] }}</td>
                                 <td style="text-align: center">
                                     <div class="btn-group" role="group">
@@ -122,6 +125,20 @@
                                                                     <div class="form-group">
                                                                         <label for="">Precio:</label>
                                                                         <input type="number" class="form-control form-control-user" id="price" name="price" step=".01" value="{{ $product['price'] }}">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-xl-2">
+                                                                    <img src="{{ asset('img/products/'.$product['name_img']) }}" width="50px">
+                                                                </div>
+                                                                <div class="col-xl-10">
+                                                                    <div class="custom-file">
+                                                                        <input type="file" class="custom-file-input" name="name_img" id="name_img" aria-describedby="inputGroupFileAddon01">
+                                                                        <label class="custom-file-label" for="name_img">--Seleccione la imagen del producto--</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -200,16 +217,23 @@
                                                     <div class="col-xl-6">
                                                         <div class="form-group">
                                                             <label for="name">Nombre del producto:</label>
-                                                            <input type="text" class="form-control form-control-user" id="name" name="name">
+                                                            <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="--Nombre del producto--">
                                                         </div>
                                                     </div>
                                                     
                                                     <div class="col-xl-6">
                                                         <div class="form-group">
                                                             <label for="">Precio:</label>
-                                                            <input type="number" class="form-control form-control-user" id="price" name="price" step=".01">
+                                                            <input type="number" class="form-control form-control-user" id="price" name="price" step=".01" placeholder="--10.00--">
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" name="name_img" id="name_img" aria-describedby="inputGroupFileAddon01">
+                                                    <label class="custom-file-label" for="name_img">--Seleccione la imagen del producto--</label>
                                                 </div>
                                             </div>
 
@@ -225,7 +249,7 @@
 
                                             <div class="form-group">
                                                 <label for="description">Descripción</label>
-                                                <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+                                                <textarea class="form-control" name="description" id="description" rows="3" placeholder="--Ingresa la descripción del producto--"></textarea>
                                             </div>
 
                                             <input type="hidden" name="who_registered" value="{{ Auth::user()->id }}">

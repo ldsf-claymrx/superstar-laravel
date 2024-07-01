@@ -18,6 +18,7 @@ class Products extends Model
         'description',
         'price',
         'id_category',
+        'name_img',
         'who_registered'
     ];
 
